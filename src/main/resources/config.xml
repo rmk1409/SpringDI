@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+        xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans
+               http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <bean id="boss" class="model.Boss">
+        <property name="name" value="Alsi"/>
+        <property name="workerList">
+            <list>
+                <ref bean="worker1"/>
+                <ref bean="worker2"/>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="worker1" class="model.Worker">
+        <property name="name" value="Alex"/>
+        <property name="salary" value="100000"/>
+        <property name="boss" ref="boss"/>
+    </bean>
+
+    <bean id="worker2" class="model.Worker">
+        <property name="name" value="Sasha"/>
+        <property name="salary" value="150000"/>
+        <property name="boss" ref="boss"/>
+    </bean>
+
+</beans>
